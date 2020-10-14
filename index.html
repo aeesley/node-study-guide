@@ -73,9 +73,93 @@
               <p>('function(error,data)')</p>
               <p>The callback function uses non-blocking code, which means that the program doesn't wait for the file reading to finishs before completing the desired output. For example, the callout function may print "Program Ended" in the console.log before the program has finished reading the file. The asynchronous nature makes Node.js very scalable. It can process a high number of requests without having to wait for each step of previous code to complete.</p>
               <p>The error section of the callback function is designed to catch and alert developers of any potential errors created by the process of reading the file. It's a "catch-all" error alert, where otherwise devlopers may not be aware there is an issue, or what that issue is. It is always included and can technically be named anything, however, error, or err are most commonly seen.</p>
-            </div>
+            </div>  
           </div>
         </div>
+        <div class="card">
+            <div class="card-header" id="headingFour">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Require Functions
+                </button>
+              </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+              <div class="card-body">
+                <p>The require function reads the Javascript file, executes the file and then returns an object. It is the easiest way to include modules that exist in separate files. The require function is used for built-in core Node.js modules, community-based modules and local/custo modules. The require function follows a simple structure:</p>
+                <p>var example = require('./example.js')</p>
+              </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFive">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Node.js Modules
+                </button>
+              </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+              <div class="card-body">
+                <p>Modules allow for logical encapsulation of code in a single unit. Best practices include segregateing code to make it most manageable for the future, and modules help allow for that. Each module is an independent entity and can be managed as a separate unit of work. There are many premade modules that can be used with Node.js, like Express framework, Socket.io, Jade, MongoDB, Restify, Bluebird. Developers can also create custom modules.</p>
+              </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSix">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Installing Modules
+                </button>
+              </h5>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+              <div class="card-body">
+                <p>Before using premade or existing modules, they need to be installed using the Node Package Manager (NPM). When you install a premade module correctly, you get all the necessary files that you need to use it moving forward within your application. To install a module you use the simple install command:</p>
+                <p>npm install express</p>
+                <p class="italic">Express represents the example module name</p>
+                <p>After you install you need to use the require keyword so that Node.js knows to incorporate the functionality of the module. Below is an example of using the require keyword:</p>
+                <p>var express=require(‘express’);</p>
+                <p class="italic">This is using the require keyword</p>
+                <p>Var app=express();</p>
+                <p class="italic">This is creating an object of express</p>
+                <p>app.set(‘view engine’, ‘jade’);</p>
+                <p class="italic">This is the calling the set method</p>
+                <p>Var server = app.listen(3000, function () {
+                });
+                </p>
+                <p class="italic">This is calling the listen method, which makes the application listen on a particular port number</p>
+              </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSeven">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Custom Modules
+                </button>
+              </h5>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                  <p>You can also create custom modules. This is basically like creating a function that you can run based on user inputs. After creating the custom module, you must create an application which will call this module into action. Custom modules do not require the Node Package Manager installation because they are already part of your project on your local machine. Below is an example of creating a custom module:</p>
+                  <p>Var exports = module.export={ };</p>
+                  <p class="italic">This is defining the module</p>
+                  <p>exports.AddNumber=function(a,b){</p>
+                  <p class="italic">This is creating the function in our module</p>
+                  <p>Return a+b;
+                        };
+                    </p>
+                    <p class="italic">This is asking the function to return a value back to the calling function</p>
+
+                  <p>To get the custom module to run, you’ll need to create a function to call it:</p>
+                  <p>Var Addition=require(‘./Addition.js’);</p>
+                  <p class="italic">Here we are using require to include our custom module. We must include the require BEFORE passing any parameters</p>
+                  <p>console.log(Addition.AddNumber(1,2));</p>
+                  <p class="italic">Here we are calling the function with specific arguments to display in the console</p>
+              </div>
+            </div>
+          </div>
       </div>
     
 </body>
