@@ -14,6 +14,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Node.js Study Guide</span>
+      </nav>
+    <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Intro to Node.js
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <p>Node.js is based on asynchronous event-driven architecture and non-blocking Input/Output API. Provides a way for web applications to have real-time 2 way connections between client and server where either side can initiate communication and data can be exchanged freely. The Node.js library uses JavaScript. Used by large companies like Paypal, Linkedin, Mozilla and eBay.
+                    
+                <p>Best Use Cases: Streaming, or event-based real-time applications like the following examples:
+                    <ul>
+                    <li>Chat applications</li>
+                    <li>Game servers</li>
+                    <li>Collaborative environments (ex. Managing documents with multiple people)</li>
+                    <li>Advertisement servers</li>
+                    <li>Streaming servers</li>
+                    <li>Client side-applications which are based on same javascript framework</li>
+                  </ul>  
+                </p>       
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Concurrent Request Handling
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <p>Concurrent request handling means if a request is received by Node for an input or output operation, it will go ahead and execute while still running other requests at the same time in the background. For example, with readFile, other programming languages would not move on until the whole file was read. With Node, the file is being read in the background while other things are happening too.</p>
+                <p>Before Node.js and concurrent request handling, what existed was called a "Stateless Model." A stateless model is where data generated in one session is not maintained for usage in the next session with that user</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Callback Functions
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <p>The callback function is the asynchronous equivalent of a function. Callback functions are used heavily in Node.js. The callback function follows a simple structure:</p>
+              <p>('function(error,data)')</p>
+              <p>The callback function uses non-blocking code, which means that the program doesn't wait for the file reading to finishs before completing the desired output. For example, the callout function may print "Program Ended" in the console.log before the program has finished reading the file. The asynchronous nature makes Node.js very scalable. It can process a high number of requests without having to wait for each step of previous code to complete.</p>
+              <p>The error section of the callback function is designed to catch and alert developers of any potential errors created by the process of reading the file. It's a "catch-all" error alert, where otherwise devlopers may not be aware there is an issue, or what that issue is. It is always included and can technically be named anything, however, error, or err are most commonly seen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     
 </body>
 <script src="./script.js"></script>   
